@@ -14,14 +14,12 @@
     </Design.DataContext>
 
     <Window.Styles>
-        <!-- <StyleInclude Source="/Assets/CustomContentControlStyle.axaml" /> -->
-
         <Style Selector="CustomContentControl.DefaultStyle">
             <Style.Setters>
                 <Setter Property="Template">
                     <ControlTemplate>
                     <Panel Background="Red">
-                        <TextBlock Text="{Binding Header, RelativeSource={RelativeSource TempleteParent}}" />
+                        <TextBlock Text="{TemplateBinding Header}" />
                     </Panel>
                     </ControlTemplate>
                 </Setter>
