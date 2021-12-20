@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Avalonia.CustomControls.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:Avalonia.CustomControls.Controls"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Avalonia.CustomControls.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Avalonia.CustomControls">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Window.Styles>
+        <!-- <StyleInclude Source="/Assets/CustomContentControlStyle.axaml" /> -->
+
+        <Style Selector="CustomContentControl.DefaultStyle">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <ControlTemplate>
+                    <Panel Background="Red">
+                        <TextBlock Text="{Binding Header, RelativeSource={RelativeSource TempleteParent}}" />
+                    </Panel>
+                    </ControlTemplate>
+                </Setter>
+            </Style.Setters>
+        </Style>
+    </Window.Styles>
+
+    <CustomContentControl 
+        Classes="DefaultStyle"
+        Header="XPTO" 
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"/>
+
+</Window>
